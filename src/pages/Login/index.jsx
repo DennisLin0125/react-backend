@@ -2,17 +2,17 @@ import { Card, message } from 'antd'
 import logo from '@/asset/logo.png'
 import './index.scss'
 import { Form, Input, Button } from 'antd'
-// import { fetchLogin } from '@/store/modules/user'
-// import { useDispatch } from 'react-redux'
-// import { useNavigate } from 'react-router-dom'
+import { fetchLogin } from '@/store/modules/user'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-  // const dispatch = useDispatch()
-  // const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const onFinish = async formValue => {
-    // await dispatch(fetchLogin(formValue))
-    // navigate('/')
-    // message.success('登入成功')
+    await dispatch(fetchLogin(formValue))
+    navigate('/')
+    message.success('登入成功')
   }
   
   return (
