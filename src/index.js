@@ -8,6 +8,8 @@ import store from './store'
 // 匯入store提供元件Provider
 import { Provider } from 'react-redux'
 
+import 'normalize.css'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     
