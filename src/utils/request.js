@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { clearToken, getToken } from './token'
 import router from '@/router'
+import {message} from "antd";
+
 const http = axios.create({
   baseURL: 'http://geek.itheima.net/v1_0/',
   timeout: 5000
@@ -15,6 +17,9 @@ http.interceptors.request.use(config => {
     config.headers.Authorization = `Bearer ${token}`
   }
   return config
+},async (error) => {
+  await message.error(error)
+  return Promise.reject(error)
 })
 
 // 新增回應攔截器
@@ -28,8 +33,10 @@ http.interceptors.response.use((response) => {
   
   console.dir(error)
   if (error.response.status === 401) {
+    await message.error('Token失效')
     clearToken()
-    await router.navigate('/login')
+    router.navigate('/login')
+    window.location.reload()
   }
   
   return Promise.reject(error)
