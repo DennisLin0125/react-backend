@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { http } from '@/utils/request'
 import { clearToken, getToken, setToken } from '@/utils'
+
+import { reqLogin, reqUserInfo } from "@/apis/user";
+
 const userStore = createSlice({
   name: 'user',
   // 資料
@@ -10,15 +12,15 @@ const userStore = createSlice({
   },
   // 同步修改方法
   reducers: {
-    setUserToken (state, action) {
+    setUserToken(state, action) {
       state.token = action.payload
       // 存入本地
       setToken(state.token)
     },
-    setUserInfo (state, action) {
+    setUserInfo(state, action) {
       state.userInfo = action.payload
     },
-    clearUserInfo (state) {
+    clearUserInfo(state) {
       state.token = ''
       state.userInfo = {}
       clearToken()
@@ -27,7 +29,7 @@ const userStore = createSlice({
 })
 
 // 解構出actionCreater
-const { setUserToken, setUserInfo, clearUserInfo } = userStore.actions
+const {setUserToken, setUserInfo, clearUserInfo} = userStore.actions
 
 // 取得reducer函數
 const userReducer = userStore.reducer
@@ -36,7 +38,7 @@ const userReducer = userStore.reducer
 // 得到資料之後透過dispatch函數 觸發修改
 const fetchLogin = (loginForm) => {
   return async (dispatch) => {
-    const res = await http.post('/authorizations', loginForm)
+    const res = await reqLogin(loginForm)
     dispatch(setUserToken(res.data.token))
   }
 }
@@ -44,7 +46,7 @@ const fetchLogin = (loginForm) => {
 
 const fetchUserInfo = () => {
   return async (dispatch) => {
-    const res = await http.get('/user/profile')
+    const res = await reqUserInfo()
     dispatch(setUserInfo(res.data))
   }
 }
