@@ -20,7 +20,10 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build"
+    "build": "craco build",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s",
+    "prepare": "husky install", 
+    "commit": "cz"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +45,24 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/cz-commitlint": "^16.2.3",
+    "@commitlint/prompt-cli": "^16.2.3",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "husky": "^7.0.0"
+  }, 
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
   }
 }
