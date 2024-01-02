@@ -2,40 +2,54 @@ module.exports = {
   // 可選型別
   types: [
     {
-      value: 'WIP',
-      name: '💪  WIP: 暫存工作。'
-    },
-    {
       value: 'feat',
-      name: '✨  feat: 新增功能。'
+      name: '✨  feat: 新增功能。',
+      emoji: ":sparkles:"
     },
     {
       value: 'fix',
-      name: '🐞  fix: 修復 bug。'
-    },
-    {
-      value: 'refactor',
-      name: '🛠  refactor: 重構、優化程式碼，不是新功能或是修復 bug。'
+      name: '🐞  fix: 修復 bug。',
+      emoji: ":bug:"
     },
     {
       value: 'docs',
-      name: '📚  docs: 修改文件。'
-    },
-    {
-      value: 'test',
-      name: '🏁  test: 新增或修改現有的測試'
-    },
-    {
-      value: 'chore',
-      name: '🗯  chore: 修改建置流程、包管理、構建過程或輔助工具的變動。不包含修改測試檔、src 裡的檔案。'
+      name: '📚  docs: 修改文件。',
+      emoji: ":memo:"
     },
     {
       value: 'style',
-      name: '💅  style: 修改程式碼的風格，不會對產品有任何的功能變動 (空白鍵、格式化、分號...等)。'
+      name: '💅  style: 修改程式碼的風格，不會對產品有任何的功能變動 (空白鍵、格式化、分號...等)。',
+      emoji: ":lipstick:"
+    },
+    {
+      value: 'refactor',
+      name: '🛠  refactor: 重構、優化程式碼，不是新功能或是修復 bug。',
+      emoji: ":recycle:"
+    },
+    {
+      value: 'perf',
+      name: '⚡️  性能優化: 新增或修改現有的測試',
+      emoji: ":zap:"
+    },
+    {
+      value: 'test',
+      name: '🏁  test: 新增或修改現有的測試',
+      emoji: ":white_check_mark:"
+    },
+    {
+      value: 'build',
+      name: '建置: 📦️ 建置流程、外部依賴變更（如升級 npm 套件、修改 vite 配置等）',
+      emoji: ":package:"
+    },
+    {
+      value: 'chore',
+      name: '🗯  chore: 修改建置流程、包管理、構建過程或輔助工具的變動。不包含修改測試檔、src 裡的檔案。',
+      emoji: ":hammer:"
     },
     {
       value: 'revert',
-      name: '⏪  revert: 撤銷、復原一次 git commit。'
+      name: '⏪  revert: 撤銷、復原一次 git commit。',
+      emoji: ":rewind:"
     }
   ],
   // 訊息步驟
@@ -50,12 +64,36 @@ module.exports = {
     footer: '<footer> 針對的 issue，像是：#520, #1314 (可選):\n',
     confirmCommit: '<confirm commit> 請確認以上描述。(y/n/e/h)',
   },
-  // upperCaseSubject: true,
-  // footerPrefix: 'Related issue:',
-  // allowCustomScopes: true,
-  // allowBreakingChanges: ["feat", "fix", "refactor"],
-  // 跳過問題
-  skipQuestions: ['body', 'footer'],
-  // subject文字長度預設是100
-  subjectLimit: 100
+  useEmoji: true,
+  emojiAlign: 'center',
+  useAI: false,
+  aiNumber: 1,
+  themeColorCode: '',
+  scopes: [],
+  allowCustomScopes: true,
+  allowEmptyScopes: true,
+  customScopesAlign: 'bottom',
+  customScopesAlias: 'custom',
+  emptyScopesAlias: 'empty',
+  upperCaseSubject: false,
+  markBreakingChangeMode: false,
+  allowBreakingChanges: ['feat', 'fix'],
+  breaklineNumber: 100,
+  breaklineChar: '|',
+  skipQuestions: [],
+  issuePrefixes: [{ value: 'closed', name: 'closed:   ISSUES has been processed' }],
+  customIssuePrefixAlign: 'top',
+  emptyIssuePrefixAlias: 'skip',
+  customIssuePrefixAlias: 'custom',
+  allowCustomIssuePrefix: true,
+  allowEmptyIssuePrefix: true,
+  confirmColorize: true,
+  maxHeaderLength: Infinity,
+  maxSubjectLength: Infinity,
+  minSubjectLength: 0,
+  scopeOverrides: undefined,
+  defaultBody: '',
+  defaultIssues: '',
+  defaultScope: '',
+  defaultSubject: '',
 }
