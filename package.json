@@ -23,7 +23,7 @@
     "build": "craco build",
     "changelog": "conventional-changelog -i CHANGELOG.md -s",
     "prepare": "husky install", 
-    "commit": "cz"
+    "commit": "git cz"
   },
   "eslintConfig": {
     "extends": [
