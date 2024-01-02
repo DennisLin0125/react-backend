@@ -4,22 +4,22 @@ module.exports = {
     {
       value: 'feat',
       name: '✨  feat: 新增功能。',
-      emoji: "✨"
+      emoji: ":sparkles:"
     },
     {
       value: 'fix',
       name: '🐞  fix: 修復 bug。',
-      emoji: "🐞"
+      emoji: ":bug:"
     },
     {
       value: 'docs',
       name: '📚  docs: 修改文件。',
-      emoji: "📚:"
+      emoji: ":memo:"
     },
     {
       value: 'style',
       name: '💅  style: 修改程式碼的風格，不會對產品有任何的功能變動 (空白鍵、格式化、分號...等)。',
-      emoji: "💅"
+      emoji: ":lipstick:"
     },
     {
       value: 'refactor',
@@ -29,17 +29,17 @@ module.exports = {
     {
       value: 'perf',
       name: '⚡️  性能優化: 新增或修改現有的測試',
-      emoji: "⚡️"
+      emoji: ":zap:"
     },
     {
       value: 'test',
       name: '🏁  test: 新增或修改現有的測試',
-      emoji: "🏁"
+      emoji: ":white_check_mark:"
     },
     {
       value: 'build',
       name: '📦️  建置:  建置流程、外部依賴變更（如升級 npm 套件、修改 vite 配置等）',
-      emoji: "📦️"
+      emoji: ":package:"
     },
     {
       value: 'chore',
@@ -49,7 +49,7 @@ module.exports = {
     {
       value: 'revert',
       name: '⏪  revert: 撤銷、復原一次 git commit。',
-      emoji: "⏪"
+      emoji: ":rewind:"
     }
   ],
   // 訊息步驟
