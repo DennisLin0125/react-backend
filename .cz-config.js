@@ -65,7 +65,7 @@ module.exports = {
     confirmCommit: '<confirm commit> 請確認以上描述。(y/n/e/h)',
   },
   useEmoji: true,
-  emojiAlign: 'center',
+  emojiAlign: 'right',
   useAI: false,
   aiNumber: 1,
   themeColorCode: '',
